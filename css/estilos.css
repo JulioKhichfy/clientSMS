@@ -1,0 +1,62 @@
+#erro{
+    color: red;
+    display: none;
+}
+
+.campo-digitacao {
+    font-size: 20px;
+    height: 130px;
+    border: 3px solid black;
+}
+
+.campo-desativado {
+    background-color: lightgray;
+}
+
+.icones {
+    vertical-align: middle;
+}
+
+.borda-verde {
+    border: 3px solid green;
+}
+
+.borda-vermelha {
+    border: 3px solid red;
+}
+
+.placar {
+    display: none;
+}
+
+body {
+   overflow: scroll;
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+}
+
+nav{
+  margin-top: 30px;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+#spinner {
+    display: none;
+}
+
+.btn-enviar-none{
+  display: none;
+}
+
+.datenone{
+    display: none;
+}
+
+#inserir-novo-celular-destino{
+      position: absolute;
+      right: 300px;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Envio de SMS</title>
+    <link rel="stylesheet" href="css/libs/materialize.min.css">
+    <link rel="stylesheet" href="css/libs/google-fonts.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div class="container">
+    <!--imagem logo sms-->
+    <!--<div class="card-panel teal white" >
+      <img src="img/pc2cel-sms.png" class="tamanho-imagem-logo">
+    </div>-->
+    <nav>
+      <div class="nav-wrapper teal lighten-2">
+        <label class="brand-logo center black-text text-darken-2 ">SMS</label>
+      </div>
+    </nav>
+
+    <!--spinner.gif e id=erro -->
+    <div class="center">
+      <img src="img/spinner.gif" alt="Spinner" id="spinner">
+      <p id="erro">Ocorreu um erro, por favor tente novamente</p>
+    </div>
+
+      <div class="row">
+
+        <div class="col s4">
+          <!--icone de call_made -->
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">call_made</i>
+            </div>
+          </div>
+
+          <!-- nome e numero celular origem -->
+          <!--id="celular-origem"-->
+          <div class="row">
+            <div class="input-field col s40">
+              <i class="material-icons prefix">phone</i>
+              <input id="celular-origem" type="tel" class="numbersOnly">
+              <label for="celular-origem" data-error="wrong" data-success="right"></label>
+              <label for="icon_telephone">Celular de Origem</label>
+            </div>
+          </div>
+
+          <!--icone de call_received -->
+          <div class="row">
+            <div class="input-field col s6">
+              <i class="material-icons prefix">call_received</i>
+            </div>
+          </div>
+
+          <!-- numero celular destino. obrigatorio -->
+          <!--id="celular-destino"-->
+          <div class="row">
+            <div class="input-field col s40">
+              <i class="material-icons prefix">phone</i>
+              <input id="celular-destino" type="tel" class="numbersOnly">
+              <label for="icon_telephone">Celular de Destino</label>
+            </div>
+          </div>
+
+          <!-- numero celular destino. opcional -->
+          <div class="row" id ="espaco-novos-destinos"></div>
+
+          <!-- botao para incluir novos campos de destino -->
+          <div class="row" id="addDestino">
+            <a id="cria-campos-novo-destinario" class="btn-floating btn-mediun waves-effect waves-light red"><i class="material-icons">add</i></a>
+          </div>
+
+
+        </div>
+
+        <!-- mensagem do sms -->
+        <div class="col s8">
+          <p class="frase center"><i id="icone-conversa" class="material-icons green-text text-darken-2">sms</i> Você ainda pode digitar  <span id="contador-caracteres-restantes">5</span> letras.</p>
+          <textarea class="campo-digitacao" rows="10" cols ="50" ></textarea>
+          <ul class="center">
+            <li><span id="contador-caracteres">0</span> caracteres</li>
+          </ul>
+          <div class="botoes">
+            <a id="botao-enviar-sms" class="waves-effect waves-light btn-large">
+              <i class="material-icons left">done</i>enviar
+            </a>
+          </div>
+          <!-- datepicker -->
+          <div class="row">
+            <p>
+              <input type="checkbox" class="filled-in" id="filled-in-box"  />
+              <label for="filled-in-box">CLIQUE PARA SELECIONAR UMA DATA DE VALIDADE PARA SUA MENSAGEM.</label>
+            </p>
+            <span id="testDate" class="datenone">
+              <label> OPCIONAL </label>
+              <input type="date" class="datepicker" placeholder="AQUI">
+            <span>
+
+          </div>
+        </div>
+        <!-- botao enviar -->
+      <!-- id="botao-enviar-sms" -->
+
+
+    </div>
+    <footer class="page-footer teal lighten-2" >
+       <div class="container">
+      <a id="botao-placar" class="btn-floating btn-small waves-effect waves-light green">
+          <i class="material-icons">assignment</i>
+        </a>
+      </div>
+    </footer>
+
+    <section class="placar">
+      <h3 class="center">Situação do SMS enviado</h3>
+      <table class="centered bordered">
+        <thead>
+          <tr>
+            <th>Celular Origem</th>
+            <th>Celular Destino</th>
+            <th>Mensagem</th>
+            <th>data validade</th>
+            <th>status</th>
+            <th>code</th>
+            <th>remover</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </section>
+
+
+  </div>
+
+
+    <script src="js/jquery.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="js/novoDestinario.js"></script>
+    <script src="js/enviarSms.js"></script>
+    <script src="js/datepicker.js"></script>
+    <script src="js/placar.js"></script>
+
+
+</body>
+</html>
