@@ -1,6 +1,3 @@
-
-onlyNumbersInInput();
-
 $("#botao-enviar-sms").click(enviarSMS);
 
 function enviarSMS() {
@@ -10,12 +7,15 @@ function enviarSMS() {
 		},1500);
 
 		var celularOrigem = $("#celular-origem").val();
+		celularOrigem = celularOrigem.replace(/[^0-9\.]/g,'');
+
 		var mensagem = $(".campo-digitacao").val();
-		var celularDestino = [];
-		celularDestino.push($("#celular-destino").val());
-		var novosNumerosDestino = document.querySelectorAll(".novoDestinarioNumero");
-		for(var i = 0 ; i < novosNumerosDestino.length ; i++){
-			celularDestino.push($(novosNumerosDestino[i]).val());
+
+		var celularDestinoArray = [];
+
+		var numerosDestinos = document.querySelectorAll(".novoDestinarioNumero");
+		for(var i = 0 ; i < numerosDestinos.length ; i++){
+			celularDestinoArray.push($(numerosDestinos[i]).val().replace(/[^0-9\.]/g,''));
 		}
 
 		var datePicker = $(".datepicker").val();
@@ -26,8 +26,8 @@ function enviarSMS() {
 
 		$("#spinner").toggle();
 
-		for(var i = 0 ; i < celularDestino.length ; i ++){
-			sms["celularDestino"] = celularDestino[i];
+		for(var i = 0 ; i < celularDestinoArray.length ; i ++){
+			sms["celularDestino"] = celularDestinoArray[i];
 			$.ajax({
 				 type: "POST",
 				 url: "http://localhost:8080/enviarsms",

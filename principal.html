@@ -9,10 +9,6 @@
 </head>
 <body>
   <div class="container">
-    <!--imagem logo sms-->
-    <!--<div class="card-panel teal white" >
-      <img src="img/pc2cel-sms.png" class="tamanho-imagem-logo">
-    </div>-->
     <nav>
       <div class="nav-wrapper teal lighten-2">
         <label class="brand-logo center black-text text-darken-2 ">SMS</label>
@@ -40,7 +36,7 @@
           <div class="row">
             <div class="input-field col s40">
               <i class="material-icons prefix">phone</i>
-              <input id="celular-origem" type="tel" class="numbersOnly">
+              <input id="celular-origem" type="tel" class="celular-mask">
               <label for="celular-origem" data-error="wrong" data-success="right"></label>
               <label for="icon_telephone">Celular de Origem</label>
             </div>
@@ -58,13 +54,13 @@
           <div class="row">
             <div class="input-field col s40">
               <i class="material-icons prefix">phone</i>
-              <input id="celular-destino" type="tel" class="numbersOnly">
+              <input id="celular-destino" type="tel" class="celular-mask novoDestinarioNumero">
               <label for="icon_telephone">Celular de Destino</label>
             </div>
           </div>
 
           <!-- numero celular destino. opcional -->
-          <div class="row" id ="espaco-novos-destinos"></div>
+          <div class="row telefone" id ="espaco-novos-destinos"></div>
 
           <!-- botao para incluir novos campos de destino -->
           <div class="row" id="addDestino">
@@ -96,13 +92,8 @@
               <label> OPCIONAL </label>
               <input type="date" class="datepicker" placeholder="AQUI">
             <span>
-
           </div>
         </div>
-        <!-- botao enviar -->
-      <!-- id="botao-enviar-sms" -->
-
-
     </div>
     <footer class="page-footer teal lighten-2" >
        <div class="container">
@@ -127,24 +118,19 @@
           </tr>
         </thead>
         <tbody>
-
         </tbody>
       </table>
     </section>
-
-
   </div>
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.maskedinput.min.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script src="js/main.js"></script>
 
-
-    <script src="js/jquery.js"></script>
-    <script src="js/materialize.min.js"></script>
-    <script src="js/main.js"></script>
-
-    <script src="js/novoDestinario.js"></script>
-    <script src="js/enviarSms.js"></script>
-    <script src="js/datepicker.js"></script>
-    <script src="js/placar.js"></script>
-
-
+  <script src="js/novoDestinario.js"></script>
+  <script src="js/enviarSms.js"></script>
+  <script src="js/datepicker.js"></script>
+  <script src="js/placar.js"></script>
+  
 </body>
 </html>

@@ -1,15 +1,10 @@
 var novoDestinario = $("#cria-campos-novo-destinario");
+
 novoDestinario.on("click", function(){
   var linha = insereNovaDIVRow();
   linha.find(".botao-remover-cel").click(removeLinha);
-  onlyNumbersInInput();
+  $(".celular-mask").mask("(99) 9999?9-9999");
 });
-
-function onlyNumbersInInput(){
-  $('.numbersOnly').keyup(function () {
-      this.value = this.value.replace(/[^0-9\.]/g,'');
-  });
-}
 
 function removeLinha() {
     event.preventDefault();
@@ -20,11 +15,8 @@ function removeLinha() {
     }, 1000);
 }
 
-
 function insereNovaDIVRow(){
-
   var divRow = $("<div>");
-
   var divFilhaNumber = $("<div>");
   var i_phone = $("<i>");
   var inputNumber = $("<input>");
@@ -32,10 +24,10 @@ function insereNovaDIVRow(){
 
   divRow.addClass("row");
 
-  divFilhaNumber.addClass("input-field col s6");
+  divFilhaNumber.addClass("input-field col s10");
   i_phone.addClass("material-icons prefix active").text("phone");
   labelnumber.addClass("active");
-  inputNumber.addClass("novoDestinarioNumero numbersOnly");
+  inputNumber.addClass("novoDestinarioNumero celular-mask");
   divFilhaNumber.append(i_phone);
   divFilhaNumber.append(inputNumber);
   divFilhaNumber.append(labelnumber);
